@@ -10,6 +10,9 @@ namespace Organibook.Models
         public int Id { set; get; }
         public String Name { set; get; }
         public String Isbn { set; get; }
+        public String Publisher { get; set; }
+        public String Author { get; set; }
         public Student Student { get; set; }
+        
     }
 }

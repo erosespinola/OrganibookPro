@@ -1,4 +1,6 @@
 ﻿using Organibook.App_Start;
+using Organibook.Models;
+using System.Data.Entity;
 using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
@@ -19,6 +21,8 @@ namespace Organibook
             WebApiConfig.Register(config);
 
             config.Formatters.Remove(config.Formatters.XmlFormatter);
+
+            Database.SetInitializer<OrganibookContext>(new DropCreateDatabaseIfModelChanges<OrganibookContext>());
         }
     }
 }

@@ -1,18 +1,21 @@
-﻿using Organibook.Models;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Organibook.Models;
+using Organibook.Util;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-//Organibook app
-
-namespace Organibook.Controllers
+namespace Organibook.Util
 {
     public class BookController : ApiController
     {
         private OrganibookContext db = new OrganibookContext();
+        
 
         // GET api/book
         public IEnumerable<Book> Get()

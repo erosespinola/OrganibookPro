@@ -1,0 +1,40 @@
+{
+   "index_searched" : "isbn",
+   "data" : [
+      {
+         "publisher_name" : "Scholastic",
+         "isbn13" : "9780439708180",
+         "book_id" : "harry_potter_and_the_sorcerers_stone_a19",
+         "dewey_normal" : "0",
+         "title" : "Harry Potter and the sorcerer's stone",
+         "urls_text" : "",
+         "isbn10" : "0439708184",
+         "marc_enc_level" : "i",
+         "language" : "eng",
+         "publisher_id" : "scholastic",
+         "physical_description_text" : "312 p. : ill. ; 20 cm.",
+         "title_latin" : "Harry Potter and the sorcerer's stone",
+         "lcc_number" : "",
+         "edition_info" : "",
+         "author_data" : [
+            {
+               "name" : "GrandPr?, Mary",
+               "id" : "grandprn_mary"
+            }
+         ],
+         "summary" : "Rescued from the outrageous neglect of his aunt and uncle, a young boy with a great destiny proves his worth while attending Hogwarts School for Wizards and Witches.",
+         "title_long" : "",
+         "subject_ids" : [
+            "potter_harry_fictitious_character_juvenile_fiction",
+            "witches_juvenile_fiction",
+            "wizards_juvenile_fiction",
+            "schools_juvenile_fiction",
+            "england_juvenile_fiction"
+         ],
+         "dewey_decimal" : "[Fic]",
+         "publisher_text" : "New York : Scholastic, 1999, c1997.",
+         "notes" : "\"First Scholastic trade paperback printing, September 1999\"--T.p. verso.\n\nSequel: Harry Potter and the Chamber of Secrets.",
+         "awards_text" : ""
+      }
+   ]
+}
