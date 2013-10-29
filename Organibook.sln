@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organibook", "Organibook\Organibook.csproj", "{F7CA1083-28EA-44FF-9D32-B5FB7A84BCEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7CA1083-28EA-44FF-9D32-B5FB7A84BCEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CA1083-28EA-44FF-9D32-B5FB7A84BCEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7CA1083-28EA-44FF-9D32-B5FB7A84BCEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CA1083-28EA-44FF-9D32-B5FB7A84BCEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
