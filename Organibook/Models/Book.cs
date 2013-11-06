@@ -13,6 +13,7 @@ namespace Organibook.Models
         public String Publisher { get; set; }
         public String Author { get; set; }
         public Student Student { get; set; }
+        public double Price { get; set; }
         
     }
 }

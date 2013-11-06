@@ -15,7 +15,6 @@ namespace Organibook.Util
     public class BookController : ApiController
     {
         private OrganibookContext db = new OrganibookContext();
-        
 
         // GET api/book
         public IEnumerable<Book> Get()

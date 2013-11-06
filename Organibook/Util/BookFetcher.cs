@@ -20,8 +20,8 @@ namespace Organibook.Util
             dynamic bookData = JObject.Parse(json);
             return new Book
                 {
-                    Author = bookData.data[0].title,
-                    Name = bookData.data[0].author_data[0].name,
+                    Author = bookData.data[0].author_data[0].name,
+                    Name = bookData.data[0].title,
                     Publisher = bookData.data[0].publisher_name,
                     Isbn = bookData.data[0].isbn10
                 };
