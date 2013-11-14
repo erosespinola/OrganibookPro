@@ -39,8 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BarcodeImaging">
-      <HintPath>..\..\..\..\..\Downloads\BarCodeImaging3-Source\c#\bin\Debug\BarcodeImaging.dll</HintPath>
+    <Reference Include="BarcodeImaging, Version=1.0.5050.34527, Culture=neutral, PublicKeyToken=82bacb0497aa5fed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\BarcodeImaging.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
