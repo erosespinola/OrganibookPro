@@ -23,9 +23,11 @@ namespace Organibook.Util
         }
 
         // GET api/book/5
-        public Book Get(string id)
+        public Book Get(int id)
         {
-            return null;
+            return (from v in db.Books
+                    where v.Id == id
+                    select v).Single();
         }
 
         // POST api/book
@@ -43,9 +45,13 @@ namespace Organibook.Util
                       select v).Single();
             b.Isbn = book.Isbn;
             b.Name = book.Name;
+            b.Author = book.Author;
+            b.Price = book.Price;
+            b.Publisher = book.Publisher;
+            b.Student = book.Student;
             db.SaveChanges();
         }
-
+       
         // DELETE api/book/5
         public void Delete(int id)
         {
