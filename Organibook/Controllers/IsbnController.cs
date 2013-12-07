@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -21,11 +22,23 @@ namespace Organibook.Controllers
         };
 
         // GET api/isbn/5
-        public Object Get(String id)
+        public Book Get(string isbn)
         {
+            return WebApi.getBook(isbn);
+        }
+
+        // POST api/isbn/
+        public Book Post([FromBody]string base64String)
+        {
+            //Converting a base 64 string to image
+            byte[] imageBytes = Convert.FromBase64String(base64String);
+            MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length);
+            ms.Write(imageBytes, 0, imageBytes.Length);
+            System.Drawing.Bitmap image = (Bitmap)Bitmap.FromStream(ms, true);
+            
+            // Getting the ISBN
             ArrayList barcodes = new ArrayList();
             int scans = 100;
-            System.Drawing.Bitmap image = (Bitmap)Bitmap.FromFile(@"C:\Users\Eros Espínola\Documents\Visual Studio 2012\Projects\OrganibookPro\Organibook\isbn1.jpg");
             BarcodeImaging.FullScanPage(ref barcodes, image, scans);
             return WebApi.getBook((String)barcodes[0]);
         }
