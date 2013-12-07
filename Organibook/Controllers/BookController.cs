@@ -23,6 +23,7 @@ namespace Organibook.Util
         }
 
         // GET api/book/5
+        [BasicAuthentication]
         public Book Get(int id)
         {
             return (from v in db.Books
@@ -31,6 +32,7 @@ namespace Organibook.Util
         }
 
         // POST api/book
+        [BasicAuthentication]
         public void Post([FromBody]Book book)
         {
             db.Books.Add(book);
@@ -38,6 +40,7 @@ namespace Organibook.Util
         }
 
         // PUT api/book/5
+        [BasicAuthentication]
         public void Put(int id, [FromBody]Book book)
         {
             Book b = (from v in db.Books
@@ -53,6 +56,7 @@ namespace Organibook.Util
         }
        
         // DELETE api/book/5
+        [BasicAuthentication]
         public void Delete(int id)
         {
             Book b = (from v in db.Books

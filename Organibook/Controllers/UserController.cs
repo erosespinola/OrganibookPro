@@ -41,6 +41,8 @@ namespace Organibook.Controllers
             User u = (from v in db.Users
                       where v.Id == id
                       select v).Single();
+            u.Username = user.Username;
+            u.Password = user.Password;
             u.FirstName = user.FirstName;
             u.LastName = user.LastName;
             u.Role = user.Role;
