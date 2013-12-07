@@ -3,6 +3,7 @@ using Organibook.Models;
 using System.Data.Entity;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Mvc;
 
 namespace Organibook
@@ -21,6 +22,9 @@ namespace Organibook
             WebApiConfig.Register(config);
 
             config.Formatters.Remove(config.Formatters.XmlFormatter);
+
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
 
             Database.SetInitializer<OrganibookContext>(new DropCreateDatabaseIfModelChanges<OrganibookContext>());
         }
