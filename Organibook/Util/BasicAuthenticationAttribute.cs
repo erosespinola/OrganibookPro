@@ -46,6 +46,13 @@ namespace Organibook.Util
                 string username = authToken.Substring(0, authToken.IndexOf(":"));
                 string password = authToken.Substring(authToken.IndexOf(":") + 1);
 
+                System.Security.Cryptography.MD5CryptoServiceProvider passwordMD5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
+                byte[] data = System.Text.Encoding.ASCII.GetBytes(password);
+                data = passwordMD5.ComputeHash(data);
+                string md5Hash = System.Text.Encoding.ASCII.GetString(data);
+
+                password = md5Hash; 
+
                 // Get user from db
                 User user = (from v in db.Users
                              where v.Username == username
