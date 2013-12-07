@@ -13,5 +13,7 @@ namespace Organibook.Models
         public DbSet<Student> Students { get; set; }
         public DbSet<Sale> Sales { get; set; }
         public DbSet<Subject> Subjects { get; set; }
+
+        public OrganibookContext() : base("azure") { }
     }
 }
