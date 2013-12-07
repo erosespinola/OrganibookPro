@@ -21,7 +21,6 @@ namespace Organibook.Controllers
         };
 
         // GET api/isbn/5
-        [BasicAuthentication]
         public Object Get(String id)
         {
             ArrayList barcodes = new ArrayList();

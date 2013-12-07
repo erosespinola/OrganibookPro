@@ -28,9 +28,9 @@ namespace Organibook.Util
 
                 // Get user from db
                 User user = (from v in db.Users
-                    where v.Username == username
-                    && v.Password == password
-                    select v).Single();
+                             where v.Username == username
+                             && v.Password == password
+                             select v).SingleOrDefault();
 
                 if (user != null)
                 {
