@@ -1,0 +1,10 @@
+<h2>Listado de libros</h2>
+<ul class="book_list">
+	<li ng-repeat="book in books">
+		<a href="#books/{{book.Id}}">
+			<img src="//placehold.it/100x100">
+			<h3>{{book.Name}}</h3>
+		</a>
+		<p>{{book.Author}}</p>
+	</li>
+</ul>

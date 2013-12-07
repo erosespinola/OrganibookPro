@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.Http.Controllers;
 using System.Web.Http;
 using System.Web.Http.Filters;
+using System.Security.Cryptography;
 
 namespace Organibook.Util
 {
@@ -32,8 +33,6 @@ namespace Organibook.Util
 
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
-            return; 
-
             if(actionContext.Request.Headers.Authorization == null)
             {
                 Challenge(actionContext);
@@ -46,12 +45,7 @@ namespace Organibook.Util
                 string username = authToken.Substring(0, authToken.IndexOf(":"));
                 string password = authToken.Substring(authToken.IndexOf(":") + 1);
 
-                System.Security.Cryptography.MD5CryptoServiceProvider passwordMD5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
-                byte[] data = System.Text.Encoding.ASCII.GetBytes(password);
-                data = passwordMD5.ComputeHash(data);
-                string md5Hash = System.Text.Encoding.ASCII.GetString(data);
-
-                password = md5Hash; 
+                password = CreateMD5Hash(password); 
 
                 // Get user from db
                 User user = (from v in db.Users
@@ -69,6 +63,25 @@ namespace Organibook.Util
                     Challenge(actionContext);
                 }
             }
+        }
+
+        public string CreateMD5Hash(string input)
+        {
+            // Use input string to calculate MD5 hash
+            MD5 md5 = System.Security.Cryptography.MD5.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(input);
+            byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+            // Convert the byte array to hexadecimal string
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hashBytes.Length; i++)
+            {
+                sb.Append(hashBytes[i].ToString("X2"));
+                // To force the hex string to lower-case letters instead of
+                // upper-case, use he following line instead:
+                // sb.Append(hashBytes[i].ToString("x2")); 
+            }
+            return sb.ToString();
         }
     }
 }

@@ -1,0 +1,33 @@
+body {
+	margin-top:50px;
+}
+
+.modal {
+    display: block;
+}
+
+#cam-display {
+	width: 320px;
+	height: 240px;
+}
+
+.book_list {
+  list-style-type: none;
+}
+ 
+.book_list li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+ 
+.book_list li p {}
+ 
+.book_list li {
+  padding: 10px;
+  overflow: auto;
+}
+ 
+.book_list li:hover {
+  background: #eee;
+  cursor: pointer;
+}

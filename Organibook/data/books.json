@@ -1,0 +1,70 @@
+[{
+	"Id": 1,
+	"Name": "Harry Potter",
+	"Isbn": "0439708184",
+	"Publisher": "alguno",
+	"Author": "jk",
+	"Student": {
+		"Id": 1,
+        "Name": "mau",
+        "StudentNumber": "A01225429",
+        "Email": "a01225429@itesm.mx"
+	},
+	"Price": 320.20
+},
+{
+	"Id": 1,
+	"Name": "Harry Potter",
+	"Isbn": "0439708184",
+	"Publisher": "alguno",
+	"Author": "jk",
+	"Student": {
+		"Id": 1,
+        "Name": "mau",
+        "StudentNumber": "A01225429",
+        "Email": "a01225429@itesm.mx"
+	},
+	"Price": 320.20
+},
+{
+	"Id": 1,
+	"Name": "Harry Potter",
+	"Isbn": "0439708184",
+	"Publisher": "alguno",
+	"Author": "jk",
+	"Student": {
+		"Id": 1,
+        "Name": "mau",
+        "StudentNumber": "A01225429",
+        "Email": "a01225429@itesm.mx"
+	},
+	"Price": 320.20
+},
+{
+	"Id": 1,
+	"Name": "Harry Potter",
+	"Isbn": "0439708184",
+	"Publisher": "alguno",
+	"Author": "jk",
+	"Student": {
+		"Id": 1,
+        "Name": "mau",
+        "StudentNumber": "A01225429",
+        "Email": "a01225429@itesm.mx"
+	},
+	"Price": 320.20
+},
+{
+	"Id": 1,
+	"Name": "Harry Potter",
+	"Isbn": "0439708184",
+	"Publisher": "alguno",
+	"Author": "jk",
+	"Student": {
+		"Id": 1,
+        "Name": "mau",
+        "StudentNumber": "A01225429",
+        "Email": "a01225429@itesm.mx"
+	},
+	"Price": 320.20
+}]
