@@ -1,5 +1,9 @@
 <h2>{{book.Name}}</h2>
 <img src="//placehold.it/150x150">
 <h4>Autor:</h4> {{book.Author}}
-<p>
-</p>
+<h4>ISBN:</h4> {{book.Isbn}}
+<h4>Editorial:</h4> {{book.Publisher}}
+<h4>Precio:</h4> {{book.Price}}
+<div class="row">
+	<button class="btn btn-danger" ng-click="deleteBook()">Eliminar</button>
+</div>

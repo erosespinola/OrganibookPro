@@ -20,11 +20,17 @@ organibookControllers.controller('BookListController', ['$scope', '$http',
 	}
 ]);
 
-organibookControllers.controller('BookDetailController', ['$scope', '$http', '$routeParams', 
-	function ($scope, $http, $routeParams) {
+organibookControllers.controller('BookDetailController', ['$scope', '$http', '$routeParams', '$location',
+	function ($scope, $http, $routeParams, $location) {
 		$http.get('api/book/' + $routeParams.bookId).success(function (data) {
 			$scope.book = data;
 		});
+		
+		$scope.deleteBook = function() {
+			$http.delete("api/book/" + $routeParams.bookId).success(function () {
+				$location.path("/books");
+			});
+		}
 	}
 ]);
 
