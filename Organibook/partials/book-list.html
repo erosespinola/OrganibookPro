@@ -1,6 +1,9 @@
 <h2>Listado de libros</h2>
+<div class="span2">
+	Search: <input ng-model="query">
+</div>
 <ul class="book_list">
-	<li ng-repeat="book in books">
+	<li ng-repeat="book in books | filter:query">
 		<a href="#books/{{book.Id}}">
 			<img src="//placehold.it/100x100">
 			<h3>{{book.Name}}</h3>
