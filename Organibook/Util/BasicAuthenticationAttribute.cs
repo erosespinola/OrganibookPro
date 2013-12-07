@@ -32,6 +32,8 @@ namespace Organibook.Util
 
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
+            return; 
+
             if(actionContext.Request.Headers.Authorization == null)
             {
                 Challenge(actionContext);

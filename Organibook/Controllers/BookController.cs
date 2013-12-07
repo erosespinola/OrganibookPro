@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Data.Entity;
 
 namespace Organibook.Util
 {
@@ -17,10 +18,10 @@ namespace Organibook.Util
         private OrganibookContext db = new OrganibookContext();
         
         // GET api/book
-        [BasicAuthentication]
         public IEnumerable<Book> Get()
         {
-            return db.Books;
+            return (from v in db.Books
+                    select v).ToList();
         }
 
         // GET api/book/5
@@ -32,26 +33,27 @@ namespace Organibook.Util
         }
 
         // POST api/book
+        [BasicAuthentication]
         public void Post([FromBody]Book book)
         {
             db.Books.Add(book);
             db.SaveChanges();
         }
 
-        // PUT api/book/5
-        public void Put(int id, [FromBody]Book book)
-        {
-            Book b = (from v in db.Books
-                      where v.Id == id
-                      select v).Single();
-            b.Isbn = book.Isbn;
-            b.Name = book.Name;
-            b.Author = book.Author;
-            b.Price = book.Price;
-            b.Publisher = book.Publisher;
-            b.Student = book.Student;
-            db.SaveChanges();
-        }
+        //// PUT api/book/5
+        //public void Put(int id, [FromBody]Book book)
+        //{
+        //    Book b = (from v in db.Books
+        //              where v.Id == id
+        //              select v).Single();
+        //    b.Isbn = book.Isbn;
+        //    b.Name = book.Name;
+        //    b.Author = book.Author;
+        //    b.Price = book.Price;
+        //    b.Publisher = book.Publisher;
+        //    b.Student = book.Student;
+        //    db.SaveChanges();
+        //}
        
         // DELETE api/book/5
         public void Delete(int id)
