@@ -2,22 +2,40 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Security.Principal;
 using System.Text;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Http.Controllers;
+using System.Web.Http;
+using System.Web.Http.Filters;
 
 namespace Organibook.Util
 {
-    public class BasicAuthenticationAttribute : System.Web.Http.Filters.ActionFilterAttribute
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true)]
+    public class BasicAuthenticationAttribute : ActionFilterAttribute
     {
         private OrganibookContext db = new OrganibookContext();
 
-        public override void OnActionExecuting(System.Web.Http.Controllers.HttpActionContext actionContext)
+        /// <summary>
+        /// Send the Authentication Challenge request
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="actionContext"></param>
+        void Challenge(HttpActionContext actionContext)
+        {
+            var host = actionContext.Request.RequestUri.DnsSafeHost;
+            actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Unauthorized);
+            actionContext.Response.Headers.Add("WWW-Authenticate", string.Format("Basic realm=\"{0}\"", host));
+        }
+
+        public override void OnActionExecuting(HttpActionContext actionContext)
         {
             if(actionContext.Request.Headers.Authorization == null)
             {
-                actionContext.Response = new System.Net.Http.HttpResponseMessage(System.Net.HttpStatusCode.Unauthorized);
+                Challenge(actionContext);
+                return;
             }
             else
             {
@@ -39,7 +57,7 @@ namespace Organibook.Util
                 }
                 else 
                 {
-                    actionContext.Response = new System.Net.Http.HttpResponseMessage(System.Net.HttpStatusCode.Unauthorized);
+                    Challenge(actionContext);
                 }
             }
         }
