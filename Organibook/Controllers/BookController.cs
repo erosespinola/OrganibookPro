@@ -56,6 +56,7 @@ namespace Organibook.Util
         //}
        
         // DELETE api/book/5
+        [BasicAuthentication]
         public void Delete(int id)
         {
             Book b = (from v in db.Books

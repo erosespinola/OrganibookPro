@@ -1,9 +1,13 @@
-<h2>{{book.Name}}</h2>
-<img src="//placehold.it/150x150">
-<h4>Autor:</h4> {{book.Author}}
-<h4>ISBN:</h4> {{book.Isbn}}
-<h4>Editorial:</h4> {{book.Publisher}}
-<h4>Precio:</h4> {{book.Price}}
-<div class="row">
+<div class="well">
+	<div class="container">
+		<legend><h2>{{book.Name}}</h2></legend>
+		<img src="//placehold.it/150x150">
+		<h4>Author:</h4> {{book.Author}}
+		<h4>ISBN:</h4> {{book.Isbn}}
+		<h4>Publisher:</h4> {{book.Publisher}}
+		<h4>Price:</h4> {{book.Price}}
+	</div>
+</div>
+<div class="row-fluid">
 	<button class="btn btn-danger" ng-click="deleteBook()">Eliminar</button>
 </div>
